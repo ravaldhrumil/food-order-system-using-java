@@ -229,20 +229,6 @@ public class FoodOrderingSystem {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // if (custNumber > 0) {
-        //     try {
-        //         String filename = "Display Cart 1.txt";
-        //         BufferedReader br = new BufferedReader(new FileReader(filename));
-        //         String line;
-        //         System.out.println("\n\n\tSecond bill");
-        //         while ((line = br.readLine()) != null) {
-        //             System.out.println(line);
-        //         }
-        //         br.close();
-        //     } catch (IOException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
 
         System.out.print("\n\t\t  Bill of your Order is " + calculateSum(TotalBill) + ".\n");
 
@@ -368,25 +354,25 @@ public class FoodOrderingSystem {
     private static final ArrayList<Integer> TotalBill = new ArrayList<>();
 
     static void addToCart() {
-        
-            try (FileWriter writer = new FileWriter("Display Cart.txt", true)) {
-                writer.write(String.format("\n\t\t  - %s %s of Price :- %d.", Quantity, FoodItem, FinalPrice));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        
+
+        try (FileWriter writer = new FileWriter("Display Cart.txt", true)) {
+            writer.write(String.format("\n\t\t  - %s %s of Price :- %d.", Quantity, FoodItem, FinalPrice));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     static void storeOrderedData() {
-        
-            try (FileWriter writer = new FileWriter("Display Ordered Items.txt", true)) {
-                writer.write(
-                        String.format("\n\t- You have selected %s %s of price :- %d", Quantity, Name_Of_Food,
-                                FinalPrice));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        
+
+        try (FileWriter writer = new FileWriter("Display Ordered Items.txt", true)) {
+            writer.write(
+                    String.format("\n\t- You have selected %s %s of price :- %d", Quantity, Name_Of_Food,
+                            FinalPrice));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     static void DeleteItemsCart() {
